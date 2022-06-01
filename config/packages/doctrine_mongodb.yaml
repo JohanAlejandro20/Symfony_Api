@@ -1,0 +1,17 @@
+# config/packages/doctrine_mongodb.yaml
+doctrine_mongodb:
+    connections:
+        default:
+            server: "mongodb://localhost:27017"
+            options: {}
+    # default_database: MarketPets
+    document_managers:
+        default:
+            database: 'MarketPets'
+            mappings:
+                App:
+                    is_bundle: false
+                    type: annotation
+                    dir: '%kernel.project_dir%/src/Document'
+                    prefix: 'App\Document'
+                    alias: App
